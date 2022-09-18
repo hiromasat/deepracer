@@ -40,23 +40,23 @@ class Reward:
         waypoints = params["waypoints"]                           # [(float, float), list of (x,y) as milestones along the track center
 
         # previopus paramsからパラメータを読み込む
-        all_wheels_on_track = previous_params["all_wheels_on_track"],      # flag to indicate if the agent is on the track
-        x = previous_params["x"]                                           # float, agent's x-coordinate in meters
-        y = previous_params["y"]                                           # float, agent's y-coordinate in meters
-        closest_waypoints = previous_params["closest_waypoints"]           # [int, int], indices of the two nearest waypoints.
-        distance_from_center = previous_params["distance_from_center"]     # float, distance in meters from the track center
-        is_crashed = previous_params["is_crashed"]                         # Boolean flag to indicate whether the agent has crashed.
-        is_left_of_center = previous_params["is_left_of_center"]           # Boolean, Flag to indicate if the agent is on the left side to the track center or not.
-        is_offtrack = previous_params["is_offtrack"]                       # Boolean flag to indicate whether the agent has gone off track.
-        is_reserved = previous_params["is_reversed"]                       # Boolean, flag to indicate if the agent is driving clockwise (True) or counter clockwise (False).
-        heading = previous_params["heading"]                               # float, agent's yaw in degrees
-        progress = previous_params["progress"]                             # float, percentage of track completed
-        speed = previous_params["speed"]                                   # float, agent's speed in meters per second (m/s)
-        steering_angle = previous_params["steering_angle"]                 # float, agent's steering angle in degrees
-        steps = previous_params["steps"]                                   # int, number steps completed
-        track_length = previous_params["track_length"]                     # float, track length in meters.
-        track_width = previous_params["track_width"]                       # float, width of the track
-        waypoints = previous_params["waypoints"]                           # [(float, float), list of (x,y) as milestones along the track center
+        all_wheels_on_track_p = previous_params["all_wheels_on_track"],      # flag to indicate if the agent is on the track
+        x_p = previous_params["x"]                                           # float, agent's x-coordinate in meters
+        y_p = previous_params["y"]                                           # float, agent's y-coordinate in meters
+        closest_waypoints_p = previous_params["closest_waypoints"]           # [int, int], indices of the two nearest waypoints.
+        distance_from_center_p = previous_params["distance_from_center"]     # float, distance in meters from the track center
+        is_crashed_p = previous_params["is_crashed"]                         # Boolean flag to indicate whether the agent has crashed.
+        is_left_of_center_p = previous_params["is_left_of_center"]           # Boolean, Flag to indicate if the agent is on the left side to the track center or not.
+        is_offtrack_p = previous_params["is_offtrack"]                       # Boolean flag to indicate whether the agent has gone off track.
+        is_reserved_p = previous_params["is_reversed"]                       # Boolean, flag to indicate if the agent is driving clockwise (True) or counter clockwise (False).
+        heading_p = previous_params["heading"]                               # float, agent's yaw in degrees
+        progress_p = previous_params["progress"]                             # float, percentage of track completed
+        speed_p = previous_params["speed"]                                   # float, agent's speed in meters per second (m/s)
+        steering_angle_p = previous_params["steering_angle"]                 # float, agent's steering angle in degrees
+        steps_p = previous_params["steps"]                                   # int, number steps completed
+        track_length_p = previous_params["track_length"]                     # float, track length in meters.
+        track_width_p = previous_params["track_width"]                       # float, width of the track
+        waypoints_p = previous_params["waypoints"]                           # [(float, float), list of (x,y) as milestones along the track center
 
         previous_params = params
 
