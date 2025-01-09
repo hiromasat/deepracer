@@ -32,7 +32,7 @@ def reward_function(params):
     track_direction = math.degrees(math.atan2(next_point[1] - prev_point[1], next_point[0] - prev_point[0]))
 
     # コースの向きと、動態の角度の差分
-    delta  = track_direction - heading
+    delta_angle  = track_direction - heading
 
     # センターラインからの離れ度合い
     marker_1 = 0.2 * track_width
@@ -51,12 +51,12 @@ def reward_function(params):
     # センターラインから
     elif distance_from_center <= marker_2:
         if is_left_of_center:
-            if delta >= 0 and delta < 30:
+            if delta_angle >= 0 and delta_angle < 30:
                 reward = 0.5
             else:
                 reward = 1e-3
         else:
-            if delta < 0 and delta > - 30:
+            if delta_angle < 0 and delta_angle > - 30:
                 reward = 0.5
             else:
                 reward = 1e-03
@@ -64,12 +64,12 @@ def reward_function(params):
     # センターラインから
     elif distance_from_center <= marker_3:
         if is_left_of_center:
-            if delta >= 20 and delta < 50:
+            if delta_angle >= 20 and delta_angle < 50:
                 reward = 0.5
             else:
                 reward = 1e-3
         else:
-            if delta < -20 and delta > -50:
+            if delta_angle < -20 and delta_angle > -50:
                 reward = 0.5
             else:
                 reward = 1e-03
