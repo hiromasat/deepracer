@@ -43,32 +43,37 @@ def reward_function(params):
     # is_left_of_center：トラック中心から左右のどちらにいるか？
     # steering_angle；ハンドルの角度（+:ledt、-:right)
 
+    # センターラインから離れ具合が25%以下(センターラインに近い場所を走っている)
     # センターラインに近いほど多めの報酬を与える
     if distance_from_center <= marker_1:
         reward = 1.0
 
 
-    # センターラインから
+    # センターラインから離れ具合が50%以下
     elif distance_from_center <= marker_2:
-        if is_left_of_center:
+        if is_left_of_center:  # 左にいる場合
+            # センターラインをどのくらい向いているか。（センターラインの方向を向いていたら報酬を与える）
             if delta_angle >= 0 and delta_angle < 30:
                 reward = 0.5
             else:
                 reward = 1e-3
-        else:
+        else:  # 右にいる場合
+            # センターラインをどのくらい向いているか。（センターラインの方向を向いていたら報酬を与える）
             if delta_angle < 0 and delta_angle > - 30:
                 reward = 0.5
             else:
                 reward = 1e-03
 
-    # センターラインから
+    # センターラインから離れ具合が75%以下
     elif distance_from_center <= marker_3:
         if is_left_of_center:
+            # センターラインをどのくらい向いているか。（センターラインの方向を向いていたら報酬を与える）
             if delta_angle >= 20 and delta_angle < 50:
                 reward = 0.5
             else:
                 reward = 1e-3
         else:
+            # センターラインをどのくらい向いているか。（センターラインの方向を向いていたら報酬を与える）
             if delta_angle < -20 and delta_angle > -50:
                 reward = 0.5
             else:
